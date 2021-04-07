@@ -1,0 +1,18 @@
+{% if user.is_authenticated %}
+<form action="/resume/new" method="get">
+    {% csrf_token %}
+    <input type="submit" value="Create a resume">
+</form>
+{% else %}
+<h3>Please authenticate if you want to add your resume!</h3>
+{% endif %}
+
+
+{% if user.is_authenticated and user.is_staff == True %}
+<form action="/vacancy/new" method="get">
+    {% csrf_token %}
+    <input type="submit" value="Create a vacancy">
+</form>
+{% endif %}
+
+<p><a href="/">Main page</a></p>

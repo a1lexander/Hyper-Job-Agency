@@ -1,0 +1,8 @@
+<form action="/vacancy/new" method="post">
+        {% csrf_token %}
+        <p>Description:</p>
+        <input type="text" name="description">
+        <p><input type="submit" value="Add a vacancy"></p>
+</form>
+
+<div><a href="/home">Personal profile</a></div>
